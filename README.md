@@ -21,26 +21,21 @@ Este repositorio contiene un conjunto de playbooks de Ansible para automatizar l
 
 3. Ejecuta el playbook principal para instalar el clúster de Kubernetes:
 
-    ```bash
     ansible-playbook main.yml -i inventory
-    ```
 
 ## Nota
 ### Fallo al crear el clúster
 En caso de necesitar restablecer la configuraciópn de kubernetes para relanzar el el proceso hemos de ejecutar lo siguente:
 
-    ```bash
     kubeadm reset -f && rm -rf $HOME/.kube
-    ```
     
 Esto dejara la maquina libre de las configuraciones hechas por pos playbooks, y de esta manera poder relanzar el proceso.
 
 ## Obtener join command
 Para obtener el comando para añadir nodos al clúster usamos:
 
-    ```bash
     kubeadm token create --print-join-command
-    ```
+
 
 ## Uso
 
